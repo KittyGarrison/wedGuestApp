@@ -12,7 +12,8 @@ function($scope){
   ];
 
   $scope.addGuest = function(){
-    $scope.guests.push({name_first: $scope.name_first, isAttending: true});
+    if(!$scope.name_first || $scope.name_first === '') { return; }
+    $scope.guests.push({name_first: $scope.name_first, isAttending: $scope.isAttending});
     $scope.name_first = '';
   };
 

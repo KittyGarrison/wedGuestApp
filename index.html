@@ -9,7 +9,18 @@
       {{guest.name_first}} - Attending {{guest.isAttending}}
     </div>
     <form ng-submit="addGuest()">
-      <input type="text" ng-model="name_first"></input>
+      <input type="text" placeholder="First Name" ng-model="name_first"></input>
+      <br>
+      <label>
+      <input type="radio" ng-model="isAttending" value="true" >
+        Yes
+      </label><br/>
+      <label>
+        <input type="radio" ng-model="isAttending" ng-value="false">
+        No
+      </label>
+      <br>
+      <br>
       <button type="submit">Add Guest</button>
     </form>
   </body>
