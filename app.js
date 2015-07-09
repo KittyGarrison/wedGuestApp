@@ -1,4 +1,19 @@
-var app = angular.module('flapperNews', []);
+var app = angular.module('guestApp', ['ui.router']);
+
+app.config([
+'$stateProvider',
+'$urlRouterProvider',
+function($stateProvider, $urlRouterProvider) {
+
+  $stateProvider
+    .state('home', {
+      url: '/home',
+      templateUrl: '/home.html',
+      controller: 'MainCtrl'
+    });
+
+  $urlRouterProvider.otherwise('home');
+}]);
 
 app.factory('guests', [function(){
     var o = {
