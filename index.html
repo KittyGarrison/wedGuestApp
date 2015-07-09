@@ -5,8 +5,8 @@
     <script src="app.js"></script>
   </head>
   <body ng-app="flapperNews" ng-controller="MainCtrl">
-    <div>
-      {{test}}
+    <div ng-repeat="guest in guests | orderBy: '-isAttending'">
+      {{guest.name_first}} - Attending {{guest.isAttending}}
     </div>
   </body>
 </html>
