@@ -9,21 +9,24 @@ function($stateProvider, $urlRouterProvider) {
     .state('home', {
       url: '/home',
       templateUrl: '/home.html',
-      controller: 'MainCtrl'
+      controller: 'MainCtrl',
+      resolve: {
+        guestPromise: ['guests', function(guests){
+          return guests.getAll();
+        }]
+      }
     });
 
   $urlRouterProvider.otherwise('home');
 }]);
 
-app.factory('guests', [function(){
-    var o = {
-      guests: [
-        {name_first: 'first name 1', isAttending: true},
-        {name_first: 'first name 2', isAttending: false},
-        {name_first: 'first name 3', isAttending: false},
-        {name_first: 'first name 4', isAttending: true},
-        {name_first: 'first name 5', isAttending: false}
-      ]
+app.factory('guests', ['$http', function($http){
+    var o = {guests: []};
+
+    o.getAll = function() {
+      return $http.get('/guests').success(function(data){
+        angular.copy(data, o.guests);
+      });
     };
     return o;
 }])
