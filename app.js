@@ -1,15 +1,23 @@
 var app = angular.module('flapperNews', []);
 
+app.factory('guests', [function(){
+    var o = {
+      guests: [
+        {name_first: 'first name 1', isAttending: true},
+        {name_first: 'first name 2', isAttending: false},
+        {name_first: 'first name 3', isAttending: false},
+        {name_first: 'first name 4', isAttending: true},
+        {name_first: 'first name 5', isAttending: false}
+      ]
+    };
+    return o;
+}])
+
 app.controller('MainCtrl', [
 '$scope',
-function($scope){
-  $scope.guests = [
-    {name_first: 'first name 1', isAttending: true},
-    {name_first: 'first name 2', isAttending: false},
-    {name_first: 'first name 3', isAttending: false},
-    {name_first: 'first name 4', isAttending: true},
-    {name_first: 'first name 5', isAttending: false}
-  ];
+'guests',
+function($scope, guests){
+  $scope.guests = guests.guests;
 
   $scope.addGuest = function(){
     if(!$scope.name_first || $scope.name_first === '') { return; }
