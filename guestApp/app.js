@@ -1,3 +1,7 @@
+var mongoose = require('mongoose');
+require('./models/Guests');
+mongoose.connect('mongodb://localhost/guests');
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
