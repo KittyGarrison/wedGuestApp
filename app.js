@@ -10,4 +10,10 @@ function($scope){
     {name_first: 'first name 4', isAttending: true},
     {name_first: 'first name 5', isAttending: false}
   ];
+
+  $scope.addGuest = function(){
+    $scope.guests.push({name_first: $scope.name_first, isAttending: true});
+    $scope.name_first = '';
+  };
+
 }]);

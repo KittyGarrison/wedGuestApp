@@ -8,5 +8,9 @@
     <div ng-repeat="guest in guests | orderBy: '-isAttending'">
       {{guest.name_first}} - Attending {{guest.isAttending}}
     </div>
+    <form ng-submit="addGuest()">
+      <input type="text" ng-model="name_first"></input>
+      <button type="submit">Add Guest</button>
+    </form>
   </body>
 </html>
