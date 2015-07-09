@@ -28,6 +28,13 @@ app.factory('guests', ['$http', function($http){
         angular.copy(data, o.guests);
       });
     };
+
+    o.create = function(guest) {
+      return $http.post('/guests', guest).success(function(data){
+        o.guests.push(data);
+      });
+    };
+
     return o;
 }])
 
@@ -39,8 +46,25 @@ function($scope, guests){
 
   $scope.addGuest = function(){
     if(!$scope.name_first || $scope.name_first === '') { return; }
-    $scope.guests.push({name_first: $scope.name_first, isAttending: $scope.isAttending});
+
+    guests.create({
+      name_first: $scope.name_first,
+      name_last: $scope.name_last,
+      phone: $scope.phone,
+      email: $scope.email,
+      song: $scope.song,
+      food: $scope.food,
+      msg: $scope.msg,
+      isAttending: $scope.isAttending
+    });
+
     $scope.name_first = '';
+    $scope.name_last = '';
+    $scope.phone = '';
+    $scope.email = '';
+    $scope.song = '';
+    $scope.food = '';
+    $scope.msg = ''
   };
 
 }]);
