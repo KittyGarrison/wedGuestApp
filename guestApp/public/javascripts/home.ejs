@@ -1,0 +1,34 @@
+<div>
+  <h1>The Union of Kitty and Marcus</h1>
+</div>
+
+<div ng-repeat="guest in guests | orderBy: '-isAttending'">
+{{guest.name_first}} {{guest.name_last}} - Attending {{guest.isAttending}}
+</div>
+<form name="guestForm" ng-submit="addGuest()">
+  <input type="text" placeholder="First Name" ng-model="name_first" required></input>
+  <br>
+  <input type="text" placeholder="Last Name" ng-model="name_last" required></input>
+  <br>
+  <input type="text" placeholder="Phone Number" ng-model="phone"></input>
+  <br>
+  <input type="text" placeholder="Email" ng-model="email"></input>
+  <br>
+  <input type="text" placeholder="Fave Dance Song" ng-model="song"></input>
+  <br>
+  <input type="text" placeholder="Food Prefrence" ng-model="food"></input>
+  <br>
+  <input type="text" placeholder="Message for Couple" ng-model="msg"></input>
+  <br>
+  <label>
+  <input type="radio" ng-model="isAttending" value="true" >
+    Yes
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="isAttending" ng-value="false">
+    No
+  </label>
+  <br>
+  <br>
+  <button type="submit">Add Guest</button>
+</form>
