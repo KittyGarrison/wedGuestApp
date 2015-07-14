@@ -25,3 +25,6 @@ input.transparent-input:focus {
   -webkit-transition: none;
 }
 
+button.form {
+  background-color:transparent !important;
+}
