@@ -1,64 +1,216 @@
-<html>
-  <head>
-    <title>The Union of Kitty and Marcus</title>
-     <script src="/javascripts/angular.js"></script>
-     <script src="/javascripts/angular-ui-router.js"></script>
-    <script src="/javascripts/angularApp.js"></script>
-    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <link href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
-  </head>
-  <body ng-app="guestApp" >
-    <ui-view></ui-view>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+  <title>The Union of Kitty and Marcus</title>
+  <script src="/javascripts/angular.js"></script>
+  <script src="/javascripts/angular-ui-router.js"></script>
+  <script src="/javascripts/angularApp.js"></script>
+	
 
-    <script type="text/ng-template" id="/home.html">
-      <div>
-        <h1>The Union of Kitty and Marcus</h1>
-      </div>
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	
+	<!-- Bootstrap itself -->
+	<link rel="stylesheet" href="stylesheets/bootstrap.css">
 
-      <div ng-repeat="guest in guests | orderBy: '-isAttending'">
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="stylesheets/magister.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+
+	<!-- Fonts -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
+
+<!-- use "theme-invert" class on bright backgrounds, also try "text-shadows" class -->
+<body class="theme-invert" ng-app="guestApp">
+
+<nav class="mainmenu">
+	<div class="container">
+		<div class="dropdown">
+			<button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			<!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				<li><a href="#head" class="active">Hello</a></li>
+				<li><a href="#about">About me</a></li>
+				<li><a href="#themes">Themes</a></li>
+				<li><a href="#contact">Get in touch</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<!-- Main (Home) section -->
+<section class="section" id="head">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
+
+				<!-- Site Title, your name, HELLO msg, etc. -->
+				<h1 class="title">Kitty & Marcus</h1>
+				<h2 class="subtitle">are getting married</h2>
+
+				<!-- Short introductory (optional) -->
+				<h3 class="tagline">
+					Potentially, the best place to tell people why they are here.<br>
+					So, this is a demo page built to showcase the beauty of the template.
+				</h3>
+				
+				<!-- Nice place to describe your site in a sentence or two -->
+				<p><a href="/download/" class="btn btn-default btn-lg">Download template now</a></p>
+	
+			</div> <!-- /col -->
+		</div> <!-- /row -->
+	
+	</div>
+</section>
+
+<!-- Second (About) section -->
+<section class="section" id="about">
+	<div class="container" ng-controller="MainCtrl">
+	
+		<h2 class="text-center title">About me</h2>
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-2">    
+				<div ng-repeat="guest in guests | orderBy: '-isAttending'">
       {{guest.name_first | titlecase}} {{guest.name_last | titlecase}} - Attending {{guest.isAttending}}
-      </div>
-      <form ng-submit="addGuest()">
-        <input type="text" class="transparent-input" placeholder="First Name" ng-model="name_first" required></input>
-        <br>
-        <input type="text" class="transparent-input" placeholder="Last Name" ng-model="name_last" required></input>
-        <br>
-        <input type="text" class="transparent-input" placeholder="Phone Number" ng-model="phone"></input>
-        <br>
-        <input type="text" class="transparent-input" placeholder="Email" ng-model="email"></input>
-        <br>
-        <input type="text" class="transparent-input" placeholder="Fave Dance Song" ng-model="song"></input>
-        <br>
-        <input type="text" class="transparent-input" placeholder="Message for Couple" ng-model="msg"></input>
-        <br>
-        <h3>Menu Preference</h3>
-        <label>
-        <input type="radio" ng-model="food" value="med" ng-required="!food">
-          Mediterranean (Meat)
-        </label><br/>
-        <label>
-          <input type="radio" ng-model="food" value="veg_med" ng-required="!food">
-          Mediterranean (Vegetarian)
-        </label><br/>
-        <label>
-          <input type="radio" ng-model="food" value="southern" checked ng-required="!food">
-          Southern
-        </label>
-        <br>
-        <h3>Can you attend?</h3>
-        <label>
-        <input type="radio" ng-model="isAttending" value="true" >
-          Yes
-        </label><br/>
-        <label>
-          <input type="radio" ng-model="isAttending" value="false">
-          No
-        </label>
-        <br>
-        <br>
-        <button class="form" type="submit">Add Guest</button>
-      </form>
-    </script>
-  </body>
+      </div>   
+			</div>
+			<div class="col-sm-4">
+				<form ng-submit="addGuest()">
+	        <input type="text" class="transparent-input" placeholder="First Name" ng-model="name_first" required></input>
+	        <br>
+	        <input type="text" class="transparent-input" placeholder="Last Name" ng-model="name_last" required></input>
+	        <br>
+	        <input type="text" class="transparent-input" placeholder="Phone Number" ng-model="phone"></input>
+	        <br>
+	        <input type="text" class="transparent-input" placeholder="Email" ng-model="email"></input>
+	        <br>
+	        <input type="text" class="transparent-input" placeholder="Fave Dance Song" ng-model="song"></input>
+	        <br>
+	        <input type="text" class="transparent-input" placeholder="Message for Couple" ng-model="msg"></input>
+	        <br>
+	        <h3>Menu Preference</h3>
+	        <label>
+	        <input type="radio" ng-model="food" value="med" ng-required="!food">
+	          Mediterranean (Meat)
+	        </label><br/>
+	        <label>
+	          <input type="radio" ng-model="food" value="veg_med" ng-required="!food">
+	          Mediterranean (Vegetarian)
+	        </label><br/>
+	        <label>
+	          <input type="radio" ng-model="food" value="southern" checked ng-required="!food">
+	          Southern
+	        </label>
+	        <br>
+	        <h3>Can you attend?</h3>
+	        <label>
+	        <input type="radio" ng-model="isAttending" value="true" >
+	          Yes
+	        </label><br/>
+	        <label>
+	          <input type="radio" ng-model="isAttending" value="false">
+	          No
+	        </label>
+	        <br>
+	        <br>
+	        <button class="form" type="submit">Add Guest</button>
+	      </form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Third (Works) section -->
+<section class="section" id="themes">
+	<div class="container">
+	
+		<h2 class="text-center title">More Themes</h2>
+		<p class="lead text-center">
+			Huge thank you to all people who publish<br>
+			their photos at <a href="http://unsplash.com">Unsplash</a>, thank you guys!
+		</p>
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-2">
+				<div class="thumbnail">
+					<img src="assets/screenshots/sshot1.jpg" alt="">
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque doloribus enim vitae nam cupiditate eius at explicabo eaque facere iste.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="thumbnail">
+					<img src="assets/screenshots/sshot4.jpg" alt="">
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque doloribus enim vitae nam cupiditate eius at explicabo eaque facere iste.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-sm-offset-2">
+				<div class="thumbnail">
+					<img src="assets/screenshots/sshot5.jpg" alt="">
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque doloribus enim vitae nam cupiditate eius at explicabo eaque facere iste.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="thumbnail">
+					<img src="assets/screenshots/sshot3.jpg" alt="">
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque doloribus enim vitae nam cupiditate eius at explicabo eaque facere iste.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+<!-- Fourth (Contact) section -->
+<section class="section" id="contact">
+	<div class="container">
+	
+		<h2 class="text-center title">Get in touch</h2>
+
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<p class="lead">Have a question about this template, or want to suggest a new feature?</p>
+				<p>Feel free to email me, or drop me a line in Twitter!</p>
+				<p><b>gt@gettemplate.com</b><br><br></p>
+				<ul class="list-inline list-social">
+					<li><a href="https://twitter.com/serggg" class="btn btn-link"><i class="fa fa-twitter fa-fw"></i> Twitter</a></li>
+					<li><a href="https://github.com/pozhilov" class="btn btn-link"><i class="fa fa-github fa-fw"></i> Github</a></li>
+					<li><a href="http://linkedin/in/pozhilov" class="btn btn-link"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+
+<!-- Load js libs only when the page is loaded. -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="javascripts/modernizr.custom.72241.js"></script>
+<!-- Custom template scripts -->
+<script src="javascripts/magister.js"></script>
+</body>
 </html>

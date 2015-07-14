@@ -1,6 +1,6 @@
 body {
-  background-color: #242424;
-  color: #F1F1F1;
+  /*background-color: #242424;*/
+  color: #F1F1F1!important;
   padding: 50px;
   font-family: 'Nothing You Could Do', cursive;
 }
