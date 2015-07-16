@@ -1,0 +1,6 @@
+<div ng-controller="guestCtrl">
+  <h1>Guests' RSVPs </h1>
+  <div ng-repeat="guest in guests | orderBy: '-isAttending'">
+    {{guest.name_first | titlecase}} {{guest.name_last | titlecase}} - Attending {{guest.isAttending}}
+  </div>
+</div>

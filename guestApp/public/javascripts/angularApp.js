@@ -8,38 +8,42 @@ function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: '/partials/home.html',
-      controller: 'MainCtrl',
+      templateUrl: '/partials/home.html'
+    });
+  $stateProvider
+    .state('about', {
+      url: '/about',
+      templateUrl: '/partials/about.html'
+    });
+
+  $stateProvider
+    .state('whoswho', {
+      url: '/whoswho',
+      templateUrl: '/partials/whoswho.html'
+    });
+
+  $stateProvider
+    .state('more', {
+      url: '/more',
+      templateUrl: '/partials/more.html'
+    });
+
+  $stateProvider
+    .state('rsvp', {
+      url: '/rsvp',
+      templateUrl: '/partials/rsvp.html'
+    });
+
+  $stateProvider
+    .state('guests', {
+      url: '/guests',
+      templateUrl: '/partials/guests.html',
       resolve: {
         guestPromise: ['guests', function(guests){
           return guests.getAll();
         }]
       }
     });
-  $stateProvider
-    .state('about', {
-      url: '/about',
-      templateUrl: '/partials/about.html',
-    });
-
-  $stateProvider
-    .state('whoswho', {
-      url: '/whoswho',
-      templateUrl: '/partials/whoswho.html',
-    });
-
-  $stateProvider
-    .state('more', {
-      url: '/more',
-      templateUrl: '/partials/more.html',
-    });
-
-  $stateProvider
-    .state('rsvp', {
-      url: '/rsvp',
-      templateUrl: '/partials/rsvp.html',
-    });
-
 
   $urlRouterProvider.otherwise('home');
 }]);
@@ -62,7 +66,7 @@ app.factory('guests', ['$http', function($http){
     return o;
 }])
 
-app.controller('MainCtrl', [
+app.controller('rsvpCtrl', [
 '$scope',
 'guests',
 function($scope, guests){
@@ -90,6 +94,14 @@ function($scope, guests){
     $scope.food = '';
     $scope.msg = ''
   };
+
+}]);
+
+app.controller('guestCtrl', [
+'$scope',
+'guests',
+function($scope, guests){
+  $scope.guests = guests.guests;
 
 }]);
 
