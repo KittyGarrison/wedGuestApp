@@ -1,24 +1,24 @@
-var app = angular.module('guestApp', ['ui.router']);
+var app = angular.module('guestApp', []);
 
-app.config([
-'$stateProvider',
-'$urlRouterProvider',
-function($stateProvider, $urlRouterProvider) {
+// app.config([
+// '$stateProvider',
+// '$urlRouterProvider',
+// function($stateProvider, $urlRouterProvider) {
 
-  $stateProvider
-    .state('home', {
-      url: '/home',
-      templateUrl: '/home.html',
-      controller: 'MainCtrl',
-      resolve: {
-        guestPromise: ['guests', function(guests){
-          return guests.getAll();
-        }]
-      }
-    });
+//   $stateProvider
+//     .state('home', {
+//       url: '/home',
+//       templateUrl: '/home.html',
+//       controller: 'MainCtrl',
+//       resolve: {
+//         guestPromise: ['guests', function(guests){
+//           return guests.getAll();
+//         }]
+//       }
+//     });
 
-  $urlRouterProvider.otherwise('home');
-}]);
+//   $urlRouterProvider.otherwise('home');
+// }]);
 
 app.factory('guests', ['$http', function($http){
     var o = {guests: []};
