@@ -1,24 +1,48 @@
-var app = angular.module('guestApp', []);
+var app = angular.module('guestApp', ['ui.router']);
 
-// app.config([
-// '$stateProvider',
-// '$urlRouterProvider',
-// function($stateProvider, $urlRouterProvider) {
+app.config([
+'$stateProvider',
+'$urlRouterProvider',
+function($stateProvider, $urlRouterProvider) {
 
-//   $stateProvider
-//     .state('home', {
-//       url: '/home',
-//       templateUrl: '/home.html',
-//       controller: 'MainCtrl',
-//       resolve: {
-//         guestPromise: ['guests', function(guests){
-//           return guests.getAll();
-//         }]
-//       }
-//     });
+  $stateProvider
+    .state('home', {
+      url: '/home',
+      templateUrl: '/partials/home.html',
+      controller: 'MainCtrl',
+      resolve: {
+        guestPromise: ['guests', function(guests){
+          return guests.getAll();
+        }]
+      }
+    });
+  $stateProvider
+    .state('about', {
+      url: '/about',
+      templateUrl: '/partials/about.html',
+    });
 
-//   $urlRouterProvider.otherwise('home');
-// }]);
+  $stateProvider
+    .state('whoswho', {
+      url: '/whoswho',
+      templateUrl: '/partials/whoswho.html',
+    });
+
+  $stateProvider
+    .state('more', {
+      url: '/more',
+      templateUrl: '/partials/more.html',
+    });
+
+  $stateProvider
+    .state('rsvp', {
+      url: '/rsvp',
+      templateUrl: '/partials/rsvp.html',
+    });
+
+
+  $urlRouterProvider.otherwise('home');
+}]);
 
 app.factory('guests', ['$http', function($http){
     var o = {guests: []};

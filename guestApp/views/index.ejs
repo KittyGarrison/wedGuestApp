@@ -34,11 +34,11 @@
 			<!-- <button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> -->
 			<!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
 			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-				<li><a href="#head" class="active">Hello</a></li>
-				<li><a href="#about">Our Story</a></li>
-				<li><a href="#whoswho">Who's Who</a></li>
-				<li><a href="#timeline">About the Date</a></li>
-				<li><a href="#rsvp">RSVP</a></li>
+				<li><a href="#/home">Home</a></li>
+				<li><a href="#/about">Our Story</a></li>
+				<li><a href="#/whoswho">Who's Who</a></li>
+				<li><a href="#/more">More Info</a></li>
+				<li><a href="#/rsvp">RSVP</a></li>
 			</ul>
 		</div>
 	</div>
@@ -46,172 +46,17 @@
 
 
 <!-- Main (Home) section -->
-<section class="section" id="head">
+<section class="section" >
 	<div class="container">
 
 		<div class="row">
-			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
+			<div class="col-md-8 col-lg-8 col-md-offset-3 col-lg-offset-3">	
 
-				<!-- Site Title, your name, HELLO msg, etc. -->
-				<h1 class="title">Kitty & Marcus</h1>
-				<h2 class="subtitle">are getting married</h2>
-
-				<!-- Short introductory (optional) -->
-				<h3 class="tagline">
-					We hope you can join us for the celibration
-				</h3>
-				<h2 class="subtitle">in :COUNTDOWN: Days</h2>
-
-				<p><a href="#rsvp" class="btn btn-default btn-lg">RSVP Here</a></p>
-	
+				<ui-view></ui-view>
+				
 			</div> <!-- /col -->
 		</div> <!-- /row -->
 	
-	</div>
-</section>
-
-<!-- Second (About) section -->
-<section class="section" id="about">
-	<div class="container">
-	
-		<h2 class="text-center title">Our story</h2>
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2">    
-				This is our story Cupcake ipsum dolor sit amet gingerbread oat cake pudding caramels. Gummi bears I love fruitcake caramels. Cupcake tart chupa chups cake. Tart sweet cheesecake. Sweet liquorice lollipop oat cake. Icing biscuit fruitcake sweet cookie lemon drops pastry jelly lollipop. Jelly beans I love brownie gummies lemon drops cake candy halvah. Jelly beans I love donut tootsie roll. Brownie marshmallow candy canes jelly-o. Sweet lemon drops marshmallow dragée toffee dragée marzipan brownie. Chocolate danish muffin I love. Donut I love muffin gummies jelly beans cheesecake gummi bears jelly. I love cookie dessert icing candy canes gummi bears marshmallow dessert. Fruitcake soufflé croissant macaroon croissant carrot cake cake.<br>Candy halvah donut chupa chups icing cookie bear claw I love. Sweet danish chocolate bar dessert gingerbread marzipan I love. Chocolate bar pastry I love danish muffin toffee biscuit. Pudding sweet I love I love biscuit sugar plum. Toffee jujubes macaroon cookie. Croissant muffin ice cream bear claw icing cheesecake. Lollipop cupcake chupa chups danish. Sweet roll chocolate cake halvah tiramisu sweet roll chocolate. Marzipan chupa chups cupcake caramels wafer dessert. Chocolate cake sweet I love bonbon gummi bears chocolate bar tart biscuit icing. Chupa chups gummies jujubes marshmallow I love I love danish sugar plum. Gingerbread oat cake halvah sweet chocolate. Cake I love chocolate I love tootsie roll pie croissant muffin. I love jelly chocolate topping fruitcake cupcake.<br>Cheesecake candy canes toffee brownie macaroon marzipan cotton candy chupa chups sesame snaps. Jelly-o sweet roll cookie danish biscuit. I love bear claw cake I love dessert toffee jelly-o pastry cake. Cupcake I love I love cupcake wafer. Powder candy canes lollipop cheesecake carrot cake jelly beans. Candy pastry gummies halvah jelly beans sesame snaps jujubes chupa chups. Sesame snaps ice cream lollipop tiramisu pie chocolate cake soufflé. Apple pie cupcake carrot cake. Cake jelly beans chocolate bar. Chocolate bar I love gingerbread tiramisu. Marzipan candy I love tootsie roll carrot cake powder croissant croissant brownie. Cupcake chocolate bar sesame snaps caramels. Macaroon caramels biscuit sweet jelly-o. Tiramisu I love marshmallow chupa chups tootsie roll ice cream macaroon lemon drops.
-		</div>
-	</div>
-</section>
-
-<!-- Third (Works) section -->
-<section class="section" id="whoswho">
-	<div class="container">
-	
-		<h2 class="text-center title">More whoswho</h2>
-		<p class="lead text-center">
-			Huge thank you to all people who publish<br>
-			their photos at <a href="http://unsplash.com">Unsplash</a>, thank you guys!
-		</p>
-		<div class="row">
-			<div class="col-sm-4 col-sm-offset-2">
-				<div class="thumbnail">
-					<img src="assets/screenshots/sshot1.jpg" alt="">
-					<div class="caption">
-						<h3>Thumbnail label</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque doloribus enim vitae nam cupiditate eius at explicabo eaque facere iste.</p>
-						<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="thumbnail">
-					<img src="assets/screenshots/sshot4.jpg" alt="">
-					<div class="caption">
-						<h3>Thumbnail label</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque doloribus enim vitae nam cupiditate eius at explicabo eaque facere iste.</p>
-						<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4 col-sm-offset-2">
-				<div class="thumbnail">
-					<img src="assets/screenshots/sshot5.jpg" alt="">
-					<div class="caption">
-						<h3>Thumbnail label</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque doloribus enim vitae nam cupiditate eius at explicabo eaque facere iste.</p>
-						<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="thumbnail">
-					<img src="assets/screenshots/sshot3.jpg" alt="">
-					<div class="caption">
-						<h3>Thumbnail label</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque doloribus enim vitae nam cupiditate eius at explicabo eaque facere iste.</p>
-						<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
-</section>
-
-<!-- Fourth (timeline) section -->
-<section class="section" id="timeline">
-	<div class="container">
-	
-		<h2 class="text-center title">Get in touch</h2>
-
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2 text-center">
-				<p class="lead">Have a question about this template, or want to suggest a new feature?</p>
-				<p>Feel free to email me, or drop me a line in Twitter!</p>
-				<p><b>gt@gettemplate.com</b><br><br></p>
-				<ul class="list-inline list-social">
-					<li><a href="https://twitter.com/serggg" class="btn btn-link"><i class="fa fa-twitter fa-fw"></i> Twitter</a></li>
-					<li><a href="https://github.com/pozhilov" class="btn btn-link"><i class="fa fa-github fa-fw"></i> Github</a></li>
-					<li><a href="http://linkedin/in/pozhilov" class="btn btn-link"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a></li>
-				</ul>
-			</div>
-		</div>
-
-	</div>
-</section>
-
-<!-- S (RSVP) section -->
-<section class="section" id="rsvp">
-	<div class="container">
-		<div class="col-sm-8 col-sm-offset-2 text-center" ng-controller="MainCtrl">
-		  <div>
-		    <h1>The Union of Kitty and Marcus</h1>
-		  </div>
-
-	  	<div ng-repeat="guest in guests | orderBy: '-isAttending'">
-	  		{{guest.name_first | titlecase}} {{guest.name_last | titlecase}} - Attending {{guest.isAttending}}
-	  	</div>
-		  <form ng-submit="addGuest()">
-		    <input type="text" class="transparent-input" placeholder="First Name" ng-model="name_first" required></input>
-		    <br>
-		    <input type="text" class="transparent-input" placeholder="Last Name" ng-model="name_last" required></input>
-		    <br>
-		    <input type="text" class="transparent-input" placeholder="Phone Number" ng-model="phone"></input>
-		    <br>
-		    <input type="text" class="transparent-input" placeholder="Email" ng-model="email"></input>
-		    <br>
-		    <input type="text" class="transparent-input" placeholder="Fave Dance Song" ng-model="song"></input>
-		    <br>
-		    <input type="text" class="transparent-input" placeholder="Message for Couple" ng-model="msg"></input>
-		    <br>
-		    <h3>Menu Preference</h3>
-		    <label>
-		    <input type="radio" ng-model="food" value="med" ng-required="!food">
-		      Mediterranean (Meat)
-		    </label><br/>
-		    <label>
-		      <input type="radio" ng-model="food" value="veg_med" ng-required="!food">
-		      Mediterranean (Vegetarian)
-		    </label><br/>
-		    <label>
-		      <input type="radio" ng-model="food" value="southern" checked ng-required="!food">
-		      Southern
-		    </label>
-		    <br>
-		    <h3>Can you attend?</h3>
-		    <label>
-		    <input type="radio" ng-model="isAttending" value="true" >
-		      Yes
-		    </label><br/>
-		    <label>
-		      <input type="radio" ng-model="isAttending" value="false">
-		      No
-		    </label>
-		    <br>
-		    <br>
-		    <button class="form" type="submit">Add Guest</button>
-		  </form>
-		</div>	
 	</div>
 </section>
 
@@ -219,8 +64,8 @@
 <!-- Load js libs only when the page is loaded. -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script src="javascripts/modernizr.custom.72241.js"></script>
+<!-- <script src="javascripts/modernizr.custom.72241.js"></script> -->
 <!-- Custom template scripts -->
-<script src="javascripts/magister.js"></script>
+<!-- <script src="javascripts/magister.js"></script> -->
 </body>
 </html>
