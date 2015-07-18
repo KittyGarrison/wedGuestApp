@@ -25,3 +25,12 @@ input.transparent-input:focus {
 button.form {
   background-color:transparent !important;
 }
+
+#board {
+  -webkit-transition:all linear 1.5s;
+  transition:all linear 1.5s;
+}
+
+#board.ng-hide {
+  opacity:0;
+}

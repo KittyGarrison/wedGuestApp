@@ -1,4 +1,4 @@
-var app = angular.module('guestApp', ['ui.router']);
+var app = angular.module('guestApp', ['ui.router', 'ngAnimate']);
 
 app.config([
 '$stateProvider',
@@ -65,6 +65,16 @@ app.factory('guests', ['$http', function($http){
 
     return o;
 }])
+
+app.controller('viewCtrl', [
+'$scope',
+function($scope){
+
+  $scope.$on('$stateChangeSuccess', function(){
+    $scope.displayView = true;
+  });
+
+}]);
 
 app.controller('rsvpCtrl', [
 '$scope',
