@@ -2,52 +2,61 @@
   <div>
     <h1 class="title">RSVP</h1>
   </div>
-  <div class="row text-left">
-    <form ng-submit="addGuest()">
-      <div class="col-sm-4">
-        <input type="text" class="transparent-input" placeholder="First Name" ng-model="name_first" required></input>
-        <br>
-        <input type="text" class="transparent-input" placeholder="Last Name" ng-model="name_last" required></input>
-        <br>
-        <input type="text" class="transparent-input" placeholder="Phone Number" ng-model="phone"></input>
-        <br>
-        <input type="text" class="transparent-input" placeholder="Email" ng-model="email"></input>
-        <br>
-        <input type="text" class="transparent-input" placeholder="Fave Dance Song" ng-model="song"></input>
-        <br>
-        <input type="text" class="transparent-input" placeholder="Message for Couple" ng-model="msg"></input>
-        <br>
+  
+  <h3>Can you attend?</h3>
+  <h3 class="btn btn-default btn-md" ng-click="rsvp(true)">YES</h3>
+  <h3 class="btn btn-default btn-md" ng-click="rsvp(false)">NO</h3>
+  <form ng-submit="addGuest()" novalidate>
+    <!-- <label>
+      <input type="radio" ng-model="isAttending" value="true" checked>
+      Yes
+    </label>
+    <label>
+      <input type="radio" ng-model="isAttending" value="false">
+      No
+    </label> -->
+    <div ng-show="isAttending=false">
+      <input type="text" class="transparent-input" placeholder="Best Wishes" ng-model="msg"></input>
+    </div>
+    <divng ng-show="isAttending">
+      <div class="row text-left ">       
+        <div class="col-sm-4 col-md-offset-2 col-lg-offset-2">
+          <h3>Please fill out for each guest</h3>
+          <input type="text" class="transparent-input" placeholder="Susie" ng-model="name_first" required></input>
+          <br>
+          <label>first name</label>
+          <input type="text" class="transparent-input" placeholder="Smith" ng-model="name_last" required></input>
+          <br>
+          <label>last name</label>
+          <input type="text" class="transparent-input" placeholder="555-555-5555" ng-model="phone"></input>
+          <br>
+          <label>phone number</label>
+          <input type="text" class="transparent-input" placeholder="Email" ng-model="email"></input>
+          <br>
+          <label>email</label>
+          <input type="text" class="transparent-input" placeholder="The Twist" ng-model="song"></input>
+          <br>
+          <label>fave dance song</label>
+        </div>
+        <div class="col-sm-4">
+          <h3>Menu Preference</h3>
+          <label>
+            <input type="radio" ng-model="food" value="med" ng-required="!food">
+            Mediterranean (Meat)
+          </label><br/>
+          <label>
+            <input type="radio" ng-model="food" value="veg_med" ng-required="!food">
+            Mediterranean (Vegetarian)
+          </label><br/>
+          <label>
+            <input type="radio" ng-model="food" value="southern" checked ng-required="!food">
+            Southern
+          </label>
+        </div> 
       </div>
-      <div class="col-sm-4">
-        <h3>Menu Preference</h3>
-        <label>
-          <input type="radio" ng-model="food" value="med" ng-required="!food">
-          Mediterranean (Meat)
-        </label><br/>
-        <label>
-          <input type="radio" ng-model="food" value="veg_med" ng-required="!food">
-          Mediterranean (Vegetarian)
-        </label><br/>
-        <label>
-          <input type="radio" ng-model="food" value="southern" checked ng-required="!food">
-          Southern
-        </label>
-        <br>
-        <h3>Can you attend?</h3>
-        <label>
-          <input type="radio" ng-model="isAttending" value="true" >
-          Yes
-        </label><br/>
-        <label>
-          <input type="radio" ng-model="isAttending" value="false">
-          No
-        </label>
-        <br>
-        <br>
-        <button class="form" type="submit">Add Guest</button>
-      </div>
-    </form>
-  </div>   
+    </div> 
+    <button ng-hide="true"class="btn btn-default btn-md" type="submit">SUBMIT</button>
+  </form>   
 </div>
 
 

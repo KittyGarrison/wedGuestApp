@@ -83,6 +83,19 @@ app.controller('rsvpCtrl', [
 'guests',
 function($scope, guests){
   $scope.guests = guests.guests;
+  $scope.isAttending = '';
+  $scope.name_first = '';
+  $scope.name_last = '';
+  $scope.phone = '';
+  $scope.email = '';
+  $scope.song = '';
+  $scope.food = '';
+  $scope.msg = '';
+
+  $scope.rsvp = function(bool){
+    $scope.isAttending = bool;
+    console.log(isAttending); 
+  }
 
   $scope.addGuest = function(){
     if(!$scope.name_first || $scope.name_first === '') { return; }
@@ -97,14 +110,6 @@ function($scope, guests){
       msg: $scope.msg,
       isAttending: $scope.isAttending
     });
-
-    $scope.name_first = '';
-    $scope.name_last = '';
-    $scope.phone = '';
-    $scope.email = '';
-    $scope.song = '';
-    $scope.food = '';
-    $scope.msg = ''
   };
 
 }]);
