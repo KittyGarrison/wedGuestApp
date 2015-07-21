@@ -83,32 +83,33 @@ app.controller('rsvpCtrl', [
 'guests',
 function($scope, guests){
   $scope.guests = guests.guests;
-  $scope.isAttending = '';
-  $scope.name_first = '';
-  $scope.name_last = '';
-  $scope.phone = '';
-  $scope.email = '';
-  $scope.song = '';
-  $scope.food = '';
-  $scope.msg = '';
+  vm = this;
+  vm.isAttending = '';
+  vm.name_first = '';
+  vm.name_last = '';
+  vm.phone = '';
+  vm.email = '';
+  vm.song = '';
+  vm.food = '';
+  vm.msg = '';
 
-  $scope.rsvp = function(bool){
-    $scope.isAttending = bool;
-    console.log(isAttending); 
+  vm.rsvp = function(bool){
+    vm.isAttending = bool;
+    console.log(vm.isAttending); 
   }
 
-  $scope.addGuest = function(){
-    if(!$scope.name_first || $scope.name_first === '') { return; }
+  vm.addGuest = function(){
+    if(!vm.name_first || vm.name_first === '') { return; }
 
     guests.create({
-      name_first: $scope.name_first,
-      name_last: $scope.name_last,
-      phone: $scope.phone,
-      email: $scope.email,
-      song: $scope.song,
-      food: $scope.food,
-      msg: $scope.msg,
-      isAttending: $scope.isAttending
+      name_first: vm.name_first,
+      name_last: vm.name_last,
+      phone: vm.phone,
+      email: vm.email,
+      song: vm.song,
+      food: vm.food,
+      msg: vm.msg,
+      isAttending: vm.isAttending
     });
   };
 

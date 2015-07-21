@@ -1,11 +1,11 @@
-<div ng-controller="rsvpCtrl">
+<div ng-controller="rsvpCtrl as rsvp">
   <div>
     <h1 class="title">RSVP</h1>
   </div>
   
   <h3>Can you attend?</h3>
-  <h3 class="btn btn-default btn-md" ng-click="rsvp(true)">YES</h3>
-  <h3 class="btn btn-default btn-md" ng-click="rsvp(false)">NO</h3>
+  <h3 class="btn btn-default btn-md" ng-click="rsvp.rsvp(true)">YES</h3>
+  <h3 class="btn btn-default btn-md" ng-click="rsvp.rsvp(false)">NO</h3>
   <form ng-submit="addGuest()" novalidate>
     <!-- <label>
       <input type="radio" ng-model="isAttending" value="true" checked>
@@ -15,41 +15,41 @@
       <input type="radio" ng-model="isAttending" value="false">
       No
     </label> -->
-    <div ng-show="isAttending=false">
-      <input type="text" class="transparent-input" placeholder="Best Wishes" ng-model="msg"></input>
+    <div ng-show="rsvp.isAttending=false">
+      <input type="text" class="transparent-input" placeholder="Best Wishes" ng-model="rsvp.msg"></input>
     </div>
-    <divng ng-show="isAttending">
+    <divng ng-show="rsvp.isAttending">
       <div class="row text-left ">       
         <div class="col-sm-4 col-md-offset-2 col-lg-offset-2">
           <h3>Please fill out for each guest</h3>
-          <input type="text" class="transparent-input" placeholder="Susie" ng-model="name_first" required></input>
+          <input type="text" class="transparent-input" placeholder="Susie" ng-model="rsvp.name_first" required></input>
           <br>
           <label>first name</label>
-          <input type="text" class="transparent-input" placeholder="Smith" ng-model="name_last" required></input>
+          <input type="text" class="transparent-input" placeholder="Smith" ng-model="rsvp.name_last" required></input>
           <br>
           <label>last name</label>
-          <input type="text" class="transparent-input" placeholder="555-555-5555" ng-model="phone"></input>
+          <input type="text" class="transparent-input" placeholder="555-555-5555" ng-model="rsvp.phone"></input>
           <br>
           <label>phone number</label>
-          <input type="text" class="transparent-input" placeholder="Email" ng-model="email"></input>
+          <input type="text" class="transparent-input" placeholder="Email" ng-model="rsvp.email"></input>
           <br>
           <label>email</label>
-          <input type="text" class="transparent-input" placeholder="The Twist" ng-model="song"></input>
+          <input type="text" class="transparent-input" placeholder="The Twist" ng-model="rsvp.song"></input>
           <br>
           <label>fave dance song</label>
         </div>
         <div class="col-sm-4">
           <h3>Menu Preference</h3>
           <label>
-            <input type="radio" ng-model="food" value="med" ng-required="!food">
+            <input type="radio" ng-model="rsvp.food" value="med" ng-required="!rsvp.food">
             Mediterranean (Meat)
           </label><br/>
           <label>
-            <input type="radio" ng-model="food" value="veg_med" ng-required="!food">
+            <input type="radio" ng-model="rsvp.food" value="veg_med" ng-required="!rsvp.food">
             Mediterranean (Vegetarian)
           </label><br/>
           <label>
-            <input type="radio" ng-model="food" value="southern" checked ng-required="!food">
+            <input type="radio" ng-model="rsvp.food" value="southern" checked ng-required="!rsvp.food">
             Southern
           </label>
         </div> 
