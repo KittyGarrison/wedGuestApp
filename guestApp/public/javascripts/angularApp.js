@@ -68,11 +68,33 @@ app.factory('guests', ['$http', function($http){
 
 app.controller('viewCtrl', [
 '$scope',
-function($scope){
+'$timeout',
+function($scope, $timeout){
+  $scope.displayView =true;
+
+  // $scope.$on('$viewContentLoaded', function(event){
+  //   console.log($scope.displayView);
+  //   $scope.displayView =true; 
+  // });
+
+  // $scope.$on('$viewContentLoaded', function(event){
+  //   console.log($scope.displayView);
+  //   $timeout(function(){$scope.displayView = true;console.log('change state')},2400)
+  // });
+
+  // $scope.$on('$stateChangeStart', function(){
+  //   // $scope.displayView = false;
+  //   $timeout(function(){$scope.displayView = true;console.log('change state')},2400)
+  // });
 
   $scope.$on('$stateChangeSuccess', function(){
-    $scope.displayView = true;
-  });
+      console.log($scope.displayView);
+
+      // $scope.displayView = true;
+
+      $timeout(function(){$scope.displayView = true;console.log('change state')},2400)
+
+      });
 
 }]);
 
