@@ -79,12 +79,10 @@ function($scope, $timeout){
 }]);
 
 app.controller('rsvpCtrl', [
-'$scope',
 'guests',
-function($scope, guests){
-  $scope.guests = guests.guests;
+function(guests){
   vm = this;
-
+  guests =  guests;
 
   vm.rsvp = function(bool){
     vm.isAttending = bool;
@@ -107,7 +105,7 @@ function($scope, guests){
       isAttending: vm.isAttending
     });
 
-      vm.isAttending = true;
+      vm.isAttending = '';
       vm.name_first = '';
       vm.name_last = '';
       vm.phone = '';

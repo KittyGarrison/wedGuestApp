@@ -1,4 +1,4 @@
-<div ng-controller="rsvpCtrl as rsvp">
+<div ng-controller="rsvpCtrl as rsvp" ng-init="rsvp.isAttending=true">
   <div>
     <h1 class="title">RSVP</h1>
   </div>
@@ -9,13 +9,13 @@
 
   <div ng-show="rsvp.isAttending">
     <div class="row text-left "> 
-      <form ng-submit="addGuest()" novalidate>
+      <form ng-submit="rsvp.addGuest()">
         <div class="col-sm-4 col-md-offset-2 col-lg-offset-2">
           <h3>Please fill out for each guest</h3>
-          <input type="text" class="transparent-input" placeholder="Susie" ng-model="rsvp.name_first" required></input>
+          <input type="text" class="transparent-input" placeholder="Susie" ng-model="rsvp.name_first" ng-required="true"></input>
           <br>
           <label>first name</label>
-          <input type="text" class="transparent-input" placeholder="Smith" ng-model="rsvp.name_last" required></input>
+          <input type="text" class="transparent-input" placeholder="Smith" ng-model="rsvp.name_last" ng-required="true"></input>
           <br>
           <label>last name</label>
           <input type="text" class="transparent-input" placeholder="555-555-5555" ng-model="rsvp.phone"></input>
@@ -39,7 +39,7 @@
             Mediterranean (Vegetarian)
           </label><br/>
           <label>
-            <input type="radio" ng-model="rsvp.food" value="southern" checked ng-required="!rsvp.food">
+            <input type="radio" ng-model="rsvp.food" value="southern" ng-required="!rsvp.food">
             Southern
           </label><br/>
           <button class="btn btn-default btn-md" type="submit" >SUBMIT</button>
@@ -49,7 +49,7 @@
   </div> 
   <div ng-hide="rsvp.isAttending">
     <div class="row text-left "> 
-      <form ng-submit="addGuest()" novalidate>
+      <form ng-submit="rsvp.addGuest()" novalidate>
         <div class="col-sm-4 col-md-offset-2 col-lg-offset-2">
           <h3>Please fill out for each guest</h3>
           <input type="text" class="transparent-input" placeholder="Susie" ng-model="rsvp.name_first" required></input>
