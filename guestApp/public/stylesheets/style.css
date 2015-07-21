@@ -22,6 +22,22 @@ input.transparent-input:focus {
   -webkit-transition: none;
 }
 
+textarea.transparent-input{
+  background-color:transparent !important;
+  border-style: solid; 
+  border-width: 2px; 
+  border-color: #F1F1F1;
+}
+
+textarea.transparent-input:focus {
+  border-width: 3px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
 button.form {
   background-color:transparent !important;
 }

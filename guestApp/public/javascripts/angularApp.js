@@ -84,14 +84,7 @@ app.controller('rsvpCtrl', [
 function($scope, guests){
   $scope.guests = guests.guests;
   vm = this;
-  vm.isAttending = '';
-  vm.name_first = '';
-  vm.name_last = '';
-  vm.phone = '';
-  vm.email = '';
-  vm.song = '';
-  vm.food = '';
-  vm.msg = '';
+
 
   vm.rsvp = function(bool){
     vm.isAttending = bool;
@@ -100,6 +93,8 @@ function($scope, guests){
 
   vm.addGuest = function(){
     if(!vm.name_first || vm.name_first === '') { return; }
+
+    console.log('adding guest');
 
     guests.create({
       name_first: vm.name_first,
@@ -111,6 +106,16 @@ function($scope, guests){
       msg: vm.msg,
       isAttending: vm.isAttending
     });
+
+      vm.isAttending = true;
+      vm.name_first = '';
+      vm.name_last = '';
+      vm.phone = '';
+      vm.email = '';
+      vm.song = '';
+      vm.food = '';
+      vm.msg = '';
+
   };
 
 }]);
