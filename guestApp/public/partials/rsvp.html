@@ -1,45 +1,59 @@
 <div ng-controller="rsvpCtrl">
   <div>
-    <h1>The Union of Kitty and Marcus</h1>
+    <h1 class="title">RSVP</h1>
   </div>
-  <form ng-submit="addGuest()">
-    <input type="text" class="transparent-input" placeholder="First Name" ng-model="name_first" required></input>
-    <br>
-    <input type="text" class="transparent-input" placeholder="Last Name" ng-model="name_last" required></input>
-    <br>
-    <input type="text" class="transparent-input" placeholder="Phone Number" ng-model="phone"></input>
-    <br>
-    <input type="text" class="transparent-input" placeholder="Email" ng-model="email"></input>
-    <br>
-    <input type="text" class="transparent-input" placeholder="Fave Dance Song" ng-model="song"></input>
-    <br>
-    <input type="text" class="transparent-input" placeholder="Message for Couple" ng-model="msg"></input>
-    <br>
-    <h3>Menu Preference</h3>
-    <label>
-      <input type="radio" ng-model="food" value="med" ng-required="!food">
-      Mediterranean (Meat)
-    </label><br/>
-    <label>
-      <input type="radio" ng-model="food" value="veg_med" ng-required="!food">
-      Mediterranean (Vegetarian)
-    </label><br/>
-    <label>
-      <input type="radio" ng-model="food" value="southern" checked ng-required="!food">
-      Southern
-    </label>
-    <br>
-    <h3>Can you attend?</h3>
-    <label>
-      <input type="radio" ng-model="isAttending" value="true" >
-      Yes
-    </label><br/>
-    <label>
-      <input type="radio" ng-model="isAttending" value="false">
-      No
-    </label>
-    <br>
-    <br>
-    <button class="form" type="submit">Add Guest</button>
-  </form>
+  <div class="row text-left">
+    <form ng-submit="addGuest()">
+      <div class="col-sm-4">
+        <input type="text" class="transparent-input" placeholder="First Name" ng-model="name_first" required></input>
+        <br>
+        <input type="text" class="transparent-input" placeholder="Last Name" ng-model="name_last" required></input>
+        <br>
+        <input type="text" class="transparent-input" placeholder="Phone Number" ng-model="phone"></input>
+        <br>
+        <input type="text" class="transparent-input" placeholder="Email" ng-model="email"></input>
+        <br>
+        <input type="text" class="transparent-input" placeholder="Fave Dance Song" ng-model="song"></input>
+        <br>
+        <input type="text" class="transparent-input" placeholder="Message for Couple" ng-model="msg"></input>
+        <br>
+      </div>
+      <div class="col-sm-4">
+        <h3>Menu Preference</h3>
+        <label>
+          <input type="radio" ng-model="food" value="med" ng-required="!food">
+          Mediterranean (Meat)
+        </label><br/>
+        <label>
+          <input type="radio" ng-model="food" value="veg_med" ng-required="!food">
+          Mediterranean (Vegetarian)
+        </label><br/>
+        <label>
+          <input type="radio" ng-model="food" value="southern" checked ng-required="!food">
+          Southern
+        </label>
+        <br>
+        <h3>Can you attend?</h3>
+        <label>
+          <input type="radio" ng-model="isAttending" value="true" >
+          Yes
+        </label><br/>
+        <label>
+          <input type="radio" ng-model="isAttending" value="false">
+          No
+        </label>
+        <br>
+        <br>
+        <button class="form" type="submit">Add Guest</button>
+      </div>
+    </form>
+  </div>   
 </div>
+
+
+  
+    
+
+
+
+ 

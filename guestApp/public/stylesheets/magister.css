@@ -13,7 +13,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-webkit-overflow-scrolling: touch;
 	line-height: 1.5em;
-	font-size:14px;
+	font-size:16px;
 	/*font-family: Helvetica, Arial, sans-serif;
 	color:#fff;
 	color:rgba(255,255,255,.8); */
@@ -64,7 +64,7 @@ body {
 .mainmenu .dropdown-menu {
 	top: -14em;
 	left: 0px;
-	font-size: 13px;
+	font-size: 16px;
 	padding:0;
 	background:none;
 	border:0 none;
@@ -110,7 +110,7 @@ body {
 	width: 100%; 
 	overflow:auto;
 	height:100%;
-	padding-top:75px;
+	padding-top:30px;
 	padding-bottom:50px; 
 	display:block;
 	top:0;

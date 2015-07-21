@@ -32,21 +32,13 @@
 <nav class="mainmenu">
 	<div class="container">
 		<div class="dropdown open">
-			<!-- <button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> -->
-			<!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
 			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-				<li><a href="#/home">Home</a></li>
-				<li><a href="#/about">Our Story</a></li>
-				<li><a href="#/whoswho">Who's Who</a></li>
-				<li><a href="#/more">More Info</a></li>
-				<li><a href="#/rsvp">RSVP</a></li>
 
 				<li><a ng-click="displayView = false"href="#/home">Home</a></li>
-				<li><a ng-click="displayView = false"href="#/about">Our Story</a></li>
-				<li><a ng-click="displayView = false"href="#/whoswho">Who's Who</a></li>
+				<!-- <li><a ng-click="displayView = false"href="#/about">Our Story</a></li>
+				<li><a ng-click="displayView = false"href="#/whoswho">Who's Who</a></li> -->
 				<li><a ng-click="displayView = false"href="#/more">More Info</a></li>
 				<li><a ng-click="displayView = false"href="#/rsvp">RSVP</a></li>
-
 
 			</ul>
 		</div>
@@ -59,7 +51,7 @@
 	<div class="container" id="board" ng-show="displayView">
 
 		<div class="row">
-			<div class="col-md-8 col-lg-8 col-md-offset-3 col-lg-offset-3">	
+			<div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 text-center">	
 
 				<ui-view></ui-view>
 				
@@ -73,8 +65,6 @@
 <!-- Load js libs only when the page is loaded. -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<!-- <script src="javascripts/modernizr.custom.72241.js"></script> -->
-<!-- Custom template scripts -->
-<!-- <script src="javascripts/magister.js"></script> -->
+
 </body>
 </html>
