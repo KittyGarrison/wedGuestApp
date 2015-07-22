@@ -1,5 +1,5 @@
-guestApp/local.0
-guestApp/local.ns
-guestApp/guests.0
-guestApp/guests.ns
-guestApp/mongod.lock
+local.0
+local.ns
+guests.0
+guests.ns
+mongod.lock
