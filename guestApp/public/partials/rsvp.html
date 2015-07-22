@@ -7,26 +7,26 @@
   <h3 class="btn btn-default btn-md" ng-click="rsvp.rsvp(true)">YES</h3>
   <h3 class="btn btn-default btn-md" ng-click="rsvp.rsvp(false)">NO</h3>
 
-  <div ng-show="rsvp.isAttending">
+  <div ng-show="rsvp.isAttending && !rsvp.hideForm">
     <div class="row text-left "> 
       <form ng-submit="rsvp.addGuest()">
-        <div class="col-sm-4 col-md-offset-2 col-lg-offset-2">
+        <div class="col-sm-6 col-md-offset-2 col-lg-offset-2">
           <h3>Please fill out for each guest</h3>
+          <label>first name</label>
           <input type="text" class="transparent-input" placeholder="Susie" ng-model="rsvp.name_first" ng-required="true"></input>
           <br>
-          <label>first name</label>
+          <label>last name</label>
           <input type="text" class="transparent-input" placeholder="Smith" ng-model="rsvp.name_last" ng-required="true"></input>
           <br>
-          <label>last name</label>
+          <label>phone number</label>
           <input type="text" class="transparent-input" placeholder="555-555-5555" ng-model="rsvp.phone"></input>
           <br>
-          <label>phone number</label>
+          <label>email</label>
           <input type="text" class="transparent-input" placeholder="Email" ng-model="rsvp.email"></input>
           <br>
-          <label>email</label>
-          <input type="text" class="transparent-input" placeholder="The Twist" ng-model="rsvp.song"></input>
-          <br>
           <label>fave dance song</label>
+          <input type="text" class="transparent-input" placeholder="The Twist" ng-model="rsvp.song"></input>
+          
         </div>
         <div class="col-sm-4">
           <h3>Menu Preference</h3>
@@ -42,27 +42,27 @@
             <input type="radio" ng-model="rsvp.food" value="southern" ng-required="!rsvp.food">
             Southern
           </label><br/>
-          <button class="btn btn-default btn-md" type="submit" >SUBMIT</button>
+          <button class="btn btn-default btn-md" type="submit"  >ACCEPT</button>
         </div> 
       </form>
     </div>
   </div> 
-  <div ng-hide="rsvp.isAttending">
+  <div ng-hide="rsvp.isAttending || rsvp.hideForm">
     <div class="row text-left "> 
-      <form ng-submit="rsvp.addGuest()" novalidate>
-        <div class="col-sm-4 col-md-offset-2 col-lg-offset-2">
+      <form ng-submit="rsvp.addGuest()">
+        <div class="col-sm-6 col-md-offset-2 col-lg-offset-2">
           <h3>Please fill out for each guest</h3>
-          <input type="text" class="transparent-input" placeholder="Susie" ng-model="rsvp.name_first" required></input>
+          <input type="text" class="transparent-input" placeholder="Susie" ng-model="rsvp.name_first" ng-required="true"></input>
           <br>
           <label>first name</label>
-          <input type="text" class="transparent-input" placeholder="Smith" ng-model="rsvp.name_last" required></input>
+          <input type="text" class="transparent-input" placeholder="Smith" ng-model="rsvp.name_last" ng-required="true"></input>
           <br>
           <label>last name</label>
         </div>
         <div class="col-sm-4">
           <h3>Message for the Couple</h3>
           <textarea ng-model="rsvp.msg" class="transparent-input" rows="8"></textarea>
-          <button class="btn btn-default btn-md" type="submit" >SUBMIT</button>
+          <button class="btn btn-default btn-md" type="submit" >DECLINE</button>
         </div> 
       </form>
     </div>

@@ -84,15 +84,17 @@ function(guests){
   vm = this;
   guests =  guests;
 
+  vm.hideForm = true;
+
   vm.rsvp = function(bool){
     vm.isAttending = bool;
+    vm.hideForm = false;
     console.log(vm.isAttending); 
   }
 
   vm.addGuest = function(){
     if(!vm.name_first || vm.name_first === '') { return; }
-
-    console.log('adding guest');
+    if(!vm.name_first || vm.name_last === '') { return; }
 
     guests.create({
       name_first: vm.name_first,
@@ -104,6 +106,9 @@ function(guests){
       msg: vm.msg,
       isAttending: vm.isAttending
     });
+
+      alert("Thank you for your response.");
+      vm.hideForm = true;
 
       vm.isAttending = '';
       vm.name_first = '';

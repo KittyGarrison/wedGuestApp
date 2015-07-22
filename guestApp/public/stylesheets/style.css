@@ -42,6 +42,10 @@ button.form {
   background-color:transparent !important;
 }
 
+.btn {
+  z-index: 200;
+}
+
 #board {
   -webkit-transition:all linear 1s;
   transition:all linear 1s;
