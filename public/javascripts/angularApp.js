@@ -128,6 +128,10 @@ app.controller('guestCtrl', [
 'guests',
 function($scope, guests){
   $scope.guests = guests.guests;
+  $scope.showMsg = false;
+  $scope.tglMsg = function(){
+    $scope.showMsg = !$scope.showMsg;
+  };
 
 }]);
 

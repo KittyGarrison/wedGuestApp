@@ -1,6 +1,19 @@
 <div ng-controller="guestCtrl">
   <h1>Guests' RSVPs </h1>
-  <div ng-repeat="guest in guests | orderBy: '-isAttending'">
-    {{guest.name_first | titlecase}} {{guest.name_last | titlecase}} - Attending {{guest.isAttending}}
+  <div class="row text-left ">       
+    <div class="col-sm-10 col-md-offset-2 col-lg-offset-2">
+      <div ng-repeat="guest in guests | orderBy: 'name_last'">
+        {{guest.name_last | titlecase}}, {{guest.name_first | titlecase}} - Attending {{guest.isAttending}}<br>
+        food: {{guest.food}} - song: {{guest.song}}<br>
+        phone: {{guest.phone}} -
+        email: {{guest.email}} -
+        <br>
+        <button class="btn btn-default btn-sm" ng-if="guest.msg" ng-click="tglMsg()">MSG</button><br>
+        <div ng-show="showMsg">
+          {{guest.msg}}
+        </div>
+        <br>
+      </div>
+    </div>
   </div>
 </div>

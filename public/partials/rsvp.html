@@ -1,6 +1,6 @@
 <div ng-controller="rsvpCtrl as rsvp" ng-init="rsvp.isAttending=true">
   <div>
-    <h1 class="title">RSVP</h1>
+    <img src="images/rsvp.png">
   </div>
   
   <h3>Can you attend?</h3>
@@ -10,7 +10,7 @@
   <div ng-show="rsvp.isAttending && !rsvp.hideForm">
     <div class="row text-left "> 
       <form ng-submit="rsvp.addGuest()">
-        <div class="col-sm-6 col-md-offset-2 col-lg-offset-2">
+        <div class="col-sm-6 col-md-offset-1 col-lg-offset-1">
           <h3>Please fill out for each guest</h3>
           <label>first name</label>
           <input type="text" class="transparent-input" placeholder="Susie" ng-model="rsvp.name_first" ng-required="true"></input>
@@ -50,14 +50,19 @@
   <div ng-hide="rsvp.isAttending || rsvp.hideForm">
     <div class="row text-left "> 
       <form ng-submit="rsvp.addGuest()">
-        <div class="col-sm-6 col-md-offset-2 col-lg-offset-2">
+        <div class="col-sm-6 col-md-offset-1 col-lg-offset-1">
           <h3>Please fill out for each guest</h3>
+          <label>first name</label>
           <input type="text" class="transparent-input" placeholder="Susie" ng-model="rsvp.name_first" ng-required="true"></input>
           <br>
-          <label>first name</label>
+          <label>last name</label>
           <input type="text" class="transparent-input" placeholder="Smith" ng-model="rsvp.name_last" ng-required="true"></input>
           <br>
-          <label>last name</label>
+          <label>phone number</label>
+          <input type="text" class="transparent-input" placeholder="555-555-5555" ng-model="rsvp.phone"></input>
+          <br>
+          <label>email</label>
+          <input type="text" class="transparent-input" placeholder="Email" ng-model="rsvp.email"></input>
         </div>
         <div class="col-sm-4">
           <h3>Message for the Couple</h3>
