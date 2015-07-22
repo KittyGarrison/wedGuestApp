@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 require('./models/Guests');
-mongoose.connect('mongodb://localhost/guests');
+mongoose.connect(process.env.MONGOLAB_URI ||'mongodb://localhost/guests');
 
 var express = require('express');
 var path = require('path');
