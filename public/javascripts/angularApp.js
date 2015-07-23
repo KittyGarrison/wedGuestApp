@@ -23,6 +23,12 @@ function($stateProvider, $urlRouterProvider) {
     });
 
   $stateProvider
+    .state('locales', {
+      url: '/locales',
+      templateUrl: '/partials/locales.html'
+    });
+
+  $stateProvider
     .state('more', {
       url: '/more',
       templateUrl: '/partials/more.html'

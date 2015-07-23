@@ -1,12 +1,10 @@
 <div ng-controller="rsvpCtrl as rsvp" ng-init="rsvp.isAttending=true">
-  <div>
+  <div class="row head-img text-center">
     <img src="images/rsvp.png">
+    <h3>Can you attend?</h3>
+    <h3 class="btn btn-default btn-md" ng-click="rsvp.rsvp(true)">YES</h3>
+    <h3 class="btn btn-default btn-md" ng-click="rsvp.rsvp(false)">NO</h3>
   </div>
-  
-  <h3>Can you attend?</h3>
-  <h3 class="btn btn-default btn-md" ng-click="rsvp.rsvp(true)">YES</h3>
-  <h3 class="btn btn-default btn-md" ng-click="rsvp.rsvp(false)">NO</h3>
-
   <div ng-show="rsvp.isAttending && !rsvp.hideForm">
     <div class="row text-left "> 
       <form ng-submit="rsvp.addGuest()">
@@ -66,7 +64,7 @@
         </div>
         <div class="col-sm-4">
           <h3>Message for the Couple</h3>
-          <textarea ng-model="rsvp.msg" class="transparent-input" rows="8"></textarea>
+          <textarea ng-model="rsvp.msg" class="transparent-input" rows="5"></textarea>
           <button class="btn btn-default btn-md" type="submit" >DECLINE</button>
         </div> 
       </form>
