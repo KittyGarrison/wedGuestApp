@@ -46,6 +46,14 @@ button.form {
   z-index: 200;
 }
 
+.bump-right{
+  margin-left: 30px;
+}
+
+.head-img{
+  margin-left: 40px;
+}
+
 #board {
   -webkit-transition:all linear 1s;
   transition:all linear 1s;
