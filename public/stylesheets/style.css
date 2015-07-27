@@ -73,10 +73,6 @@ button.form {
   margin-left: 30px;
 }
 
-.head-img{
-  margin-left: 50px;
-}
-
 #board {
   -webkit-transition:all linear 1s;
   transition:all linear 1s;
@@ -84,4 +80,8 @@ button.form {
 
 #board.ng-hide {
   opacity:0;
+}
+
+.img-responsive {
+  display: inline;
 }

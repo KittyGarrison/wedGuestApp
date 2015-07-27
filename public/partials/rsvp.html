@@ -1,6 +1,6 @@
 <div ng-controller="rsvpCtrl as rsvp" ng-init="rsvp.isAttending=true">
-  <div class="row head-img text-center">
-    <img src="images/rsvp.png">
+  <div class="row text-center">
+    <img src="images/rsvp.png" class="img-responsive" alt="RSVP">
     <h3>Can you attend?</h3>
     <h3 class="btn btn-default btn-md" ng-click="rsvp.rsvp(true)">YES</h3>
     <h3 class="btn btn-default btn-md" ng-click="rsvp.rsvp(false)">NO</h3>
@@ -8,7 +8,7 @@
   <div ng-show="rsvp.isAttending && !rsvp.hideForm">
     <div class="row text-left "> 
       <form ng-submit="rsvp.addGuest()">
-        <div class="col-sm-6 col-md-offset-1 col-lg-offset-1">
+        <div class="col-sm-6 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2">
           <h3>Please fill out for each guest</h3>
           <label>first name</label>
           <input type="text" class="transparent-input" placeholder="Susie" ng-model="rsvp.name_first" ng-required="true"></input>
@@ -26,7 +26,7 @@
           <input type="text" class="transparent-input" placeholder="The Twist" ng-model="rsvp.song"></input>
           
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6 col-md-4 col-lg-4">
           <h3>Menu Preference</h3>
           <label>
             <input type="radio" ng-model="rsvp.food" value="med" ng-required="!rsvp.food">
@@ -48,7 +48,7 @@
   <div ng-hide="rsvp.isAttending || rsvp.hideForm">
     <div class="row text-left "> 
       <form ng-submit="rsvp.addGuest()">
-        <div class="col-sm-6 col-md-offset-1 col-lg-offset-1">
+        <div class="col-sm-6 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2">
           <h3>Please fill out for each guest</h3>
           <label>first name</label>
           <input type="text" class="transparent-input" placeholder="Susie" ng-model="rsvp.name_first" ng-required="true"></input>
@@ -62,7 +62,7 @@
           <label>email</label>
           <input type="text" class="transparent-input" placeholder="Email" ng-model="rsvp.email"></input>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6 col-md-4 col-lg-4">
           <h3>Message for the Couple</h3>
           <textarea ng-model="rsvp.msg" class="transparent-input" rows="5"></textarea>
           <button class="btn btn-default btn-md" type="submit" >DECLINE</button>
