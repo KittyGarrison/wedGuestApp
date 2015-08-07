@@ -28,6 +28,12 @@ function($stateProvider, $urlRouterProvider) {
       templateUrl: '/partials/locales.html'
     });
 
+$stateProvider
+    .state('timeline', {
+      url: '/timeline',
+      templateUrl: '/partials/timeline.html'
+    });
+
   $stateProvider
     .state('more', {
       url: '/more',
