@@ -47,6 +47,12 @@ $stateProvider
     });
 
   $stateProvider
+    .state('wedshower', {
+      url: '/wedshower',
+      templateUrl: '/partials/wedShower.html'
+    });
+
+  $stateProvider
     .state('guests', {
       url: '/guests',
       templateUrl: '/partials/guests.html',
